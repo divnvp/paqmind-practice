@@ -1,0 +1,51 @@
+<html lang="ru">
+  <head>
+    <title></title>
+
+    <style>
+      .parent {
+        display: grid;
+        grid-gap: 0.25rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 5rem auto;
+        max-width: 20rem;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        div {
+          background: lightblue;
+          height: 4rem;
+          text-align: center;
+          line-height: 4rem;
+          font-size: 1.5rem;
+          &:last-child {
+            border-bottom-right-radius: 1rem;
+          }
+          &:nth-child(4n):nth-last-child(-n+4) {
+            border-bottom-right-radius: 1rem;
+          }
+          &:nth-child(-n+4):last-child {
+            border-top-right-radius: 1rem;
+          }
+        }
+      }
+    </style>
+  </head>
+<body>
+
+<div class="parent">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>
+</div>
+
+</body></html>
