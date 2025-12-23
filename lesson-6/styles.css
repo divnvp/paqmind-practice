@@ -1,0 +1,121 @@
+:root {
+  --slate-50: oklch(98.4% 0.003 247.858);
+  --slate-700: oklch(37.2% 0.044 257.287);
+  --slate-950: oklch(12.9% 0.042 264.695);
+  --sky-200: oklch(90.1% 0.058 230.902);
+  --sky-300: oklch(82.8% 0.111 230.318);
+}
+html, body {
+  font-size: 16px;
+  color: var(--slate-950);
+}
+* {
+  box-sizing: border-box;
+  border: 0 solid;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: var(--slate-950);
+  text-decoration: none;
+}
+.prose {
+  h2, h3, h4, p {
+    margin: 1rem 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.container {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.divider {
+  align-items: center;
+  display: flex;
+  margin: 2rem 0;
+  &:before, &:after {
+    content: "";
+  }
+  .content {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0 0.75rem;
+    line-height: 100%;
+    text-transform: uppercase;
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* border style, solid by default */
+  &:before, &:after {
+    border-top: 1px solid var(--slate-700);
+    border-top: 1px solid;
+    flex: 1 0 auto;
+  }
+  &.dashed {
+    &:before, &:after {
+      border-top-style: dashed;
+    }
+  }
+  &.gradient {
+    &:before {
+      border-image: linear-gradient(to right, transparent, var(--slate-700)) 1;
+    }
+    &:after {
+      border-image: linear-gradient(to left, transparent, var(--slate-700)) 1;
+    }
+  }
+  
+  /*content position, center by default */
+  &:before, &:after {
+    flex-grow: 1;
+  }
+  &.left-0 {
+    &:before {
+      flex-grow: 0;
+    }
+    &:after {
+      flex-grow: 1;
+    }
+  }
+  &.left-25 {
+    &:before {
+      flex-grow: 1;
+    }
+    &:after {
+      flex-grow: 3;
+    }
+  }
+  &.left-75 {
+    &:before {
+      flex-grow: 3;
+    }
+    &:after {
+      flex-grow: 1;
+    }
+  }
+  &.left-100 {
+    &:before {
+      flex-grow: 1;
+    }
+    &:after {
+      flex-grow: 0;
+    }
+  }
+}
